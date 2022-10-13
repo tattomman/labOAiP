@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-float sum_of_odd(int amnt_of_elem, float array[])
+float sum_of_odd(int amnt_of_elem, float array[]) //function for calculating the sum of elements with odd indices
 {
 	float sum_of_odd = 0;
 	for (int i = 0; i < amnt_of_elem; i++)
@@ -11,7 +11,7 @@ float sum_of_odd(int amnt_of_elem, float array[])
 	}
 	printf("\nSum of odd elements = %f\n", sum_of_odd);
 }
-float sum_btwn_ngtv(int amnt_of_elem, float array[])
+float sum_btwn_ngtv(int amnt_of_elem, float array[]) //function for calcutaing the sum of elements between first and last negative elements
 {
 	float sum_btwn_ngtv = 0;
 	int frst_ngtv = 0, scnd_ngtv = 0;

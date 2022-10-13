@@ -28,20 +28,16 @@ int main()
 	for (int i = 0; i < n; i++)
 		printf("|%.3f| ", array[i]);
 
-	int max = 0, min = 0;
+	int max = 0, min = 0; //finding elements with the minimum and the maximum values
 	for (int i = 1; i < n; i++)
 	{
 		if (array[max] < array[i])
-		{
 			max = i;
-		}
 		if (array[min] > array[i])
-		{
 			min = i;
-		}
 	}
 
-	int min_or_max, amnt_to_be_shifted;
+	int min_or_max, amnt_to_be_shifted; //deleting elements between min element and max element
 	if (min < max)
 		min_or_max = min + 1;
 	else
