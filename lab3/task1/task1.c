@@ -1,35 +1,35 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-float sum_of_odd(int amt_of_elem, float array[])
+float sum_of_odd(int amnt_of_elem, float array[])
 {
 	float sum_of_odd = 0;
-	for (int i = 0; i < amt_of_elem; i++)
+	for (int i = 0; i < amnt_of_elem; i++)
 	{
 		if (i % 2 != 0)
 			sum_of_odd += array[i];
 	}
 	printf("\nSum of odd elements = %f\n", sum_of_odd);
 }
-float sum_btwn_ngtv(int amt_of_elem, float array[])
+float sum_btwn_ngtv(int amnt_of_elem, float array[])
 {
 	float sum_btwn_ngtv = 0;
-	int a = 0, b = 0;
-	for (int i = 0; i < amt_of_elem; i++)
+	int frst_ngtv = 0, scnd_ngtv = 0;
+	for (int i = 0; i < amnt_of_elem; i++)
 	{
 		if (array[i] < 0)
 		{
-			a = i;
-			for (int j = i; j < amt_of_elem; j++)
+			frst_ngtv = i;
+			for (int j = i; j < amnt_of_elem; j++)
 			{
 				if (array[j] < 0)
-					b = j;
+					scnd_ngtv = j;
 			}
 			break;
 		}
 	}
 
-	for (int i = ++a; i < b; i++)
+	for (int i = ++frst_ngtv; i < scnd_ngtv; i++)
 		sum_btwn_ngtv += array[i];
 	printf("Sum of elements between first and last negative = %f\n", sum_btwn_ngtv);
 }
@@ -49,7 +49,7 @@ int main()
 	printf("Enter values of elements\n");
 	for (int i = 0; i < n; i++)
 	{
-		printf("a[%d] = ", i);
+		printf("array[%d] = ", i);
 		while (scanf("%f", &array[i]) != 1)
 		{
 			printf("Wrong input, try again\n");

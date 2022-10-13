@@ -16,15 +16,19 @@ int main()
 	printf("Enter values of elements\n");
 	for (int i = 0; i < n; i++)
 	{
-		printf("a[%d] = ", i);
+		printf("array[%d] = ", i);
 		while (scanf("%f", &array[i]) != 1)
 		{
 			printf("Wrong input, try again\n");
 			rewind(stdin);
 		}
 	}
-	
-	int max=0, min=0;
+
+	printf("Your array: ");
+	for (int i = 0; i < n; i++)
+		printf("|%.3f| ", array[i]);
+
+	int max = 0, min = 0;
 	for (int i = 1; i < n; i++)
 	{
 		if (array[max] < array[i])
@@ -37,23 +41,23 @@ int main()
 		}
 	}
 
-	int p, k, d;
+	int min_or_max, amnt_to_be_shifted;
 	if (min < max)
-		p = min + 1;
+		min_or_max = min + 1;
 	else
-		p = max + 1;
-	d = abs(min - max) - 1;
+		min_or_max = max + 1;
+	amnt_to_be_shifted = abs(min - max) - 1;
 
-	for (int i = 0; i < d; i++)
+	for (int i = 0; i < amnt_to_be_shifted; i++)
 	{
-		for (int j = p; j < n - i; j++)
+		for (int j = min_or_max; j < n - i; j++)
 			array[j] = array[j + 1];
 
 	}
 
-	printf("Array: ");
-	for (int i = 0; i < n-d; i++)
-		printf("|%.0f| ", array[i]);
+	printf("\nModified array: ");
+	for (int i = 0; i < n - amnt_to_be_shifted; i++)
+		printf("|%.3f| ", array[i]);
 
 	return 0;
 }
