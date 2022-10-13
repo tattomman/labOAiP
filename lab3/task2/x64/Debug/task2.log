@@ -1,0 +1,4 @@
+﻿  task2.c
+C:\Users\tattomman\Desktop\lab2\lab3\task2\task2.c(45,6): warning C4013: abs: нет определения; предполагается "extern" с возвратом типа "int"
+C:\Users\tattomman\Desktop\lab2\lab3\task2\task2.c(40,9): warning C4101: k: неиспользованная локальная переменная
+  task2.vcxproj -> C:\Users\tattomman\Desktop\lab2\lab3\x64\Debug\task2.exe
