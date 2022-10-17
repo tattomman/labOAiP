@@ -36,27 +36,43 @@ float sum_btwn_ngtv(int amnt_of_elem, float array[]) //function for calcutaing t
 int main()
 {
 	float array[100];
-	int n; //n - amount of array elements
+	int n, fill_type; //n - amount of array elements
 
-	printf("Enter amount of values\n");
-	while (scanf("%d", &n) != 1 || n <= 0)
+	printf("Enter amount of values(up to 100)\n");
+	while (scanf("%d", &n) != 1 || n <= 1 || n > 100)
 	{
 		printf("Wrong input, try again\n");
 		rewind(stdin);
-
 	}
 
-	printf("Enter values of elements\n");
-	for (int i = 0; i < n; i++)
+	printf("Type 1 for filling array manually, type 2 for filling with random values\n");
+	while (scanf("%d", &fill_type) != 1 || (fill_type != 1 && fill_type != 2))
 	{
-		printf("array[%d] = ", i);
-		while (scanf("%f", &array[i]) != 1)
-		{
-			printf("Wrong input, try again\n");
-			rewind(stdin);
-		}
+		printf("Wrong input, try again\n");
+		rewind(stdin);
 	}
-
+	switch (fill_type)
+	{
+	case 1:
+		printf("Array will be filled manually\n");
+		printf("Enter values of elements\n");
+		for (int i = 0; i < n; i++)
+		{
+			printf("array[%d] = ", i);
+			while (scanf("%f", &array[i]) != 1)
+			{
+				printf("Wrong input, try again\n");
+				rewind(stdin);
+			}
+		}
+		break;
+	case 2:
+		printf("Array will be filled with random values\n");
+		for (int i = 0; i < n; i++)
+			array[i] = rand();
+			break;
+	}
+	
 	printf("Your array: ");
 	for (int i = 0; i < n; i++)
 		printf("|%.3f| ", array[i]);
