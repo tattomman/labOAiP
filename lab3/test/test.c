@@ -21,9 +21,9 @@ int minimum(int n, float array[]) //min element of the array
 	}
 	return min;
 }
- shifting(int min, int max, int n, float array[]) //deleting elements between min element and max element
+shifting(int min, int max, int n, float array[]) //deleting elements between min element and max element
 {
-	int min_or_max, amnt_to_be_shifted; 
+	int min_or_max, amnt_to_be_shifted;
 	if (min < max)
 		min_or_max = min + 1;
 	else
@@ -47,7 +47,7 @@ int main()
 	int n, fill_type; //n - amount of array elements
 
 	printf("Enter amount of values(up to 100)\n");
-	while (scanf("%d", &n) != 1 || n <= 0 || n > 100)
+	while (scanf("%d", &n) != 1 || n <= 1 || n > 100)
 	{
 		printf("Wrong input, try again\n");
 		rewind(stdin);
@@ -77,7 +77,7 @@ int main()
 	case 2:
 		printf("Array will be filled with random values\n");
 		for (int i = 0; i < n; i++)
-			array[i] = rand() % 201 - 100;
+			array[i] = rand();
 		break;
 	}
 
@@ -86,7 +86,7 @@ int main()
 		printf("|%.3f| ", array[i]);
 
 	int max = maximum(n, array), min = minimum(n, array);
-	printf("\nIndex of min element: %d, index of max element: %d", min, max);
+	printf("\n%d %d", min, max);
 	shifting(min, max, n, array);
 
 	return 0;
