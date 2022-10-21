@@ -1,60 +1,43 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-int maximum(int n, float array[]) //max element of the array
+#include <time.h>
+int sort(int thrd_amnt, int thrd_array[]) //sorting array in descending order
 {
-	int max = 0;
-	for (int i = 1; i < n; i++)
+	for (int i = 0; i < thrd_amnt; i++)
 	{
-		if (array[max] < array[i])
-			max = i;
+		for (int j = 0; j < thrd_amnt; j++)
+		{
+			if (thrd_array[j] < thrd_array[j + 1])// 2 5 8 //1 4 6
+			{
+				int x = thrd_array[j + 1];
+				thrd_array[j + 1] = thrd_array[j];
+				thrd_array[j] = x;
+			}
+		}
 	}
-	return max;
-}
-int minimum(int n, float array[]) //min element of the array
-{
-	int min = 0;
-	for (int i = 1; i < n; i++)
-	{
-		if (array[min] > array[i])
-			min = i;
-	}
-	return min;
-}
-shifting(int min, int max, int n, float array[]) //deleting elements between min element and max element
-{
-	int min_or_max, amnt_to_be_shifted;
-	if (min < max)
-		min_or_max = min + 1;
-	else
-		min_or_max = max + 1;
-	amnt_to_be_shifted = abs(min - max) - 1;
-
-	for (int i = 0; i < amnt_to_be_shifted; i++)
-	{
-		for (int j = min_or_max; j < n - i; j++)
-			array[j] = array[j + 1];
-
-	}
-
-	printf("\nModified array: ");
-	for (int i = 0; i < n - amnt_to_be_shifted; i++)
-		printf("|%.3f| ", array[i]);
 }
 int main()
 {
-	float array[100];
-	int n, fill_type; //n - amount of array elements
-
-	printf("Enter amount of values(up to 100)\n");
-	while (scanf("%d", &n) != 1 || n <= 1 || n > 100)
+	int frst_array[100], scnd_array[100], thrd_array[200]; //variables for arrays
+	int frst_amnt, scnd_amnt, thrd_amnt = 0; //variables for amounts of elemnts
+	int fill_type;
+	printf("Enter amount of values for first array\n");
+	while (scanf("%d", &frst_amnt) != 1 || frst_amnt <= 0 || getchar() != '\n')
 	{
 		printf("Wrong input, try again\n");
 		rewind(stdin);
 	}
 
-	printf("Type 1 for filling array manually, type 2 for filling with random values\n");
-	while (scanf("%d", &fill_type) != 1 || (fill_type != 1 && fill_type != 2))
+	printf("Enter amount of values for second array\n");
+	while (scanf("%d", &scnd_amnt) != 1 || scnd_amnt <= 0 || getchar() != '\n')
+	{
+		printf("Wrong input, try again\n");
+		rewind(stdin);
+	}
+
+	printf("Type 1 for filling arrays manually, type 2 for filling with random values\n");
+	while (scanf("%d", &fill_type) != 1 || (fill_type != 1 && fill_type != 2) || getchar() != '\n')
 	{
 		printf("Wrong input, try again\n");
 		rewind(stdin);
@@ -62,12 +45,23 @@ int main()
 	switch (fill_type)
 	{
 	case 1:
-		printf("Array will be filled manually\n");
-		printf("Enter values of elements\n");
-		for (int i = 0; i < n; i++)
+		printf("Arrays will be filled manually\n");
+		printf("Enter values of elements for the first array in descending order\n");
+		for (int i = 0; i < frst_amnt; i++)
 		{
 			printf("array[%d] = ", i);
-			while (scanf("%f", &array[i]) != 1)
+			while (scanf("%d", &frst_array[i]) != 1 || getchar() != '\n')
+			{
+				printf("Wrong input, try again\n");
+				rewind(stdin);
+			}
+		}
+
+		printf("Enter values of elements for the second array in descending order\n");
+		for (int i = 0; i < scnd_amnt; i++)
+		{
+			printf("array[%d] = ", i);
+			while (scanf("%d", &scnd_array[i]) != 1 || getchar() != '\n')
 			{
 				printf("Wrong input, try again\n");
 				rewind(stdin);
@@ -75,19 +69,35 @@ int main()
 		}
 		break;
 	case 2:
-		printf("Array will be filled with random values\n");
-		for (int i = 0; i < n; i++)
-			array[i] = rand();
+		printf("Arrays will be filled with random values\n");
+		for (int i = 0; i < frst_amnt; i++)
+			frst_array[i] = rand() % 201 - 100;
+		for (int i = 0; i < scnd_amnt; i++)
+			scnd_array[i] = rand() % 201 - 100;
+		sort(frst_amnt, frst_array);
+		sort(scnd_amnt, scnd_array);
 		break;
 	}
 
-	printf("Your array: ");
-	for (int i = 0; i < n; i++)
-		printf("|%.3f| ", array[i]);
+	int k = 0, j = 0, i = 0; //variables for counters
+	while (i <= frst_amnt && j <= scnd_amnt) //merging sorted arrays
+	{
+		if (frst_array[i] > scnd_array[j])
+		{
+			thrd_array[k] = frst_array[i];
+			i++;
+		}
+		else
+		{
+			thrd_array[k] = scnd_array[j];
+			j++;
+		}
+		k++;
+	}
 
-	int max = maximum(n, array), min = minimum(n, array);
-	printf("\n%d %d", min, max);
-	shifting(min, max, n, array);
-
+	thrd_amnt = frst_amnt + scnd_amnt;
+	printf("Third array: ");
+	for (int i = 0; i < thrd_amnt; i++)
+		printf("|%d| ", thrd_array[i]);
 	return 0;
 }

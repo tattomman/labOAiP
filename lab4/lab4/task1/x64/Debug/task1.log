@@ -1,0 +1,13 @@
+﻿  task1.c
+D:\bsuir\labOAiP\lab4\lab4\task1\task1.c(64,15): warning C4047: return: "int" отличается по уровням косвенного обращения от "int [100][100]"
+D:\bsuir\labOAiP\lab4\lab4\task1\task1.c(28,1): warning C4047: инициализация: "int" отличается по уровням косвенного обращения от "int (__cdecl *)()"
+D:\bsuir\labOAiP\lab4\lab4\task1\task1.c(72,49): error C2109: для индекса требуется массив или указатель
+D:\bsuir\labOAiP\lab4\lab4\task1\task1.c(72,11): warning C4473: "printf": передано недостаточно аргументов для строки формата
+D:\bsuir\labOAiP\lab4\lab4\task1\task1.c(72,11): message : заполнители и их параметры ожидают переменное число аргументов в количестве 3, но было предоставлено 2
+D:\bsuir\labOAiP\lab4\lab4\task1\task1.c(72,11): message : отсутствующий вариативный аргумент "3" требуется для строки форматирования "%d"
+D:\bsuir\labOAiP\lab4\lab4\task1\task1.c(68,1): warning C4047: инициализация: "int" отличается по уровням косвенного обращения от "int (__cdecl *)()"
+D:\bsuir\labOAiP\lab4\lab4\task1\task1.c(84,49): error C2109: для индекса требуется массив или указатель
+D:\bsuir\labOAiP\lab4\lab4\task1\task1.c(84,11): warning C4473: "printf": передано недостаточно аргументов для строки формата
+D:\bsuir\labOAiP\lab4\lab4\task1\task1.c(84,11): message : заполнители и их параметры ожидают переменное число аргументов в количестве 3, но было предоставлено 2
+D:\bsuir\labOAiP\lab4\lab4\task1\task1.c(84,11): message : отсутствующий вариативный аргумент "3" требуется для строки форматирования "%d"
+D:\bsuir\labOAiP\lab4\lab4\task1\task1.c(80,1): warning C4047: инициализация: "int" отличается по уровням косвенного обращения от "int (__cdecl *)()"

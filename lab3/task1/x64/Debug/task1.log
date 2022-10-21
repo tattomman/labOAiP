@@ -1,5 +1,5 @@
 ﻿  task1.c
-D:\bsuir\labOAiP\lab3\task1\task1.c(73,28): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\bsuir\labOAiP\lab3\task1\task1.c(72,28): warning C4244: =: преобразование "int" в "float", возможна потеря данных
 D:\bsuir\labOAiP\lab3\task1\task1.c(13): warning C4716: sum_of_odd: должна возвращать значение
 D:\bsuir\labOAiP\lab3\task1\task1.c(35): warning C4716: sum_btwn_ngtv: должна возвращать значение
   task1.vcxproj -> D:\bsuir\labOAiP\lab3\x64\Debug\task1.exe
