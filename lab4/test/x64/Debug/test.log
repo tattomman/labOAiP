@@ -1,2 +1,3 @@
 ﻿  test.c
-  test.vcxproj -> D:\bsuir\labOAiP\lab4\lab4\x64\Debug\test.exe
+C:\Users\tattomman\Desktop\OAiP\lab4\test\test.c(7,8): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
+  test.vcxproj -> C:\Users\tattomman\Desktop\OAiP\lab4\x64\Debug\test.exe
