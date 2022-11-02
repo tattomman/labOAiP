@@ -1,31 +1,28 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-int rows()
+void rows(int *row_amnt)
 {
-	int rows_amnt;
 	printf("Enter amount of rows\n");
-	while (scanf("%d", &rows_amnt) != 1 || rows_amnt <= 0) 
+	while (scanf("%d", &row_amnt) != 1 || row_amnt <= 0) 
 	{
 		printf("Wrong input, try again\n");
 		rewind(stdin);
 	}
-	return rows_amnt;
 }
-int cols()
+void cols(int *col_amnt)
 {
-	int cols_amnt;
+	int col_amnt;
 	printf("Enter amount of columns\n");
-	while (scanf("%d", &cols_amnt) != 1 || cols_amnt <= 0)
+	while (scanf("%d", &col_amnt) != 1 || col_amnt <= 0)
 	{
 		printf("Wrong input, try again\n");
 		rewind(stdin);
 	}
-	return cols_amnt;
 }
-int matrix_creating()
+void matrix_creating(int *matrix, int *row_amnt, int *col_amnt)
 {
-	int rows_amnt = rows, cols_amnt = cols, fill_type, matrix[100][100];
+	int fill_type;
 	printf("Type 1 for manual input, type 2 for filling with random values\n");
 	while (scanf("%d", &fill_type) != 1 || (fill_type !=1 && fill_type != 2))
 	{
@@ -36,9 +33,9 @@ int matrix_creating()
 	{
 	case 1:
 		printf("Manual input.");
-		for (int i = 0; i < rows_amnt; i++)
+		for (int i = 0; i < row_amnt; i++)
 		{
-			for (int j = 0; j < cols_amnt; j++)
+			for (int j = 0; j < col_amnt; j++)
 			{
 				printf("\nmatrix[%d][%d]=", i, j);
 				while (scanf("%d", &matrix[i][j]) != 1)
@@ -52,16 +49,15 @@ int matrix_creating()
 		break;
 	case 2:
 		printf("Filling with random values\n");
-		for (int i = 0; i < rows_amnt; i++)
+		for (int i = 0; i < row_amnt; i++)
 		{
-			for (int j = 0; j < cols_amnt; j++)
+			for (int j = 0; j < col_amnt; j++)
 			{
 				matrix[i][j] = rand() % 11 + 0;
 			}
 		}
 		break;
 	}
-	return matrix;
 }
 int matrix_output(int matrix)
 {
@@ -74,13 +70,10 @@ int matrix_output(int matrix)
 }
 void main()
 {
+	int row_amnt, col_amnt, matrix[100][100];
 	rows();
 	cols();
 	matrix_creating();
-	int rows_amnt = rows(), cols_amnt = cols(), matrix = matrix_creating;
-	for (int i = 0; i < rows_amnt; i++)
-	{
-		for (int j = 0; j < cols_amnt; j++)
-			printf("\nmatrix[%d][%d]=%d ", i, j, matrix[i][j]);
-	}
+	matrix_output(matrix);
+	
 }
