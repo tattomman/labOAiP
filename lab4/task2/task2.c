@@ -72,7 +72,8 @@ int main()
 	{
 		bool flag = true;
 		for (int i = 0; i < rows_amnt; i++)
-			if (matrix[i][j] < 0) flag = false;
+			if (matrix[i][j] < 0) 
+				flag = false;
 		if (flag)
 		{
 			column = j;
@@ -93,6 +94,7 @@ int main()
 			printf("|%3d|\t", matrix[i][j]);
 		printf("\n");
 	}
+
 	getchar();
 	return 0;
 }

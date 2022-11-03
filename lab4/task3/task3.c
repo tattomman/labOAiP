@@ -6,7 +6,7 @@ int main()
 {
 	srand(time(NULL));
 	int rows_amnt;
-	printf("Enter amount of rows\n");
+	printf("Enter amount of rows for the square matrix\n");
 	while (scanf("%d", &rows_amnt) != 1 || rows_amnt <= 0 || getchar() != '\n')
 	{
 		printf("Wrong input, try again\n");
@@ -14,8 +14,8 @@ int main()
 	}
 
 	int cols_amnt;
-	printf("Enter amount of columns\n");
-	while (scanf("%d", &cols_amnt) != 1 || cols_amnt <= 0 || getchar() != '\n')
+	printf("Enter amount of columns for the square matrix\n");
+	while (scanf("%d", &cols_amnt) != 1 || cols_amnt != rows_amnt || getchar() != '\n')
 	{
 		printf("Wrong input, try again\n");
 		rewind(stdin);
@@ -62,9 +62,21 @@ int main()
 	for (int i = 0; i < rows_amnt; i++)
 	{
 		for (int j = 0; j < cols_amnt; j++)
-			printf("|%3d|\t", matrix[i][j]);
+			printf("%3d|", matrix[i][j]);
 		printf("\n");
 	}
+
+	int max_elem=matrix[0][0];
+	for (int i = 0; i < rows_amnt / 2; i++) //finding max element in the top left corner of square matrix
+	{
+		for (int j = 0; j < cols_amnt / 2; j++)
+		{
+			if (matrix[i][j] > max_elem)
+				max_elem = matrix[i][j];
+		}
+
+	}
+	printf("Max element in the top left corner of square matrix=%d",max_elem);
 
 	getchar();
 	return 0;

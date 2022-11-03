@@ -79,22 +79,24 @@ int main()
 	}
 	printf("Amount of rows with zero in it= %d\n", count);
 
-	int ser, maxSer = 0, col = 0;
-	for (int i = 0; i < cols_amnt; i++) //finding column with the longest series of identical elements
+	int ser, max_ser = 0, col = 0;
+	for (int j = 0; j < cols_amnt; j++) //finding column with the longest series of identical elements
 	{
 		ser = 1;
-		for (int j = 0; j < rows_amnt; j++)
+		for (int i = 0; i < rows_amnt; i++)
 		{
-			if (j && (matrix[j][i] == matrix[j - 1][i]))
+			if (i && (matrix[i][j] == matrix[i - 1][j]))
 			{
 				ser++;
-				if (ser > maxSer)
-					maxSer = ser;
-				col = i;
+				if (ser > max_ser)
+					max_ser = ser;
+				col = j;
 			}
 			else ser = 1;
 		}
 	}
-	printf("Column with the longest series with identical elements= %d", col);
+	printf("Index of column with the longest series of identical elements= %d", col);
+
+	getchar();
 	return 0;
 }

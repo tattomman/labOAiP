@@ -1,26 +1,3 @@
 ﻿  task1.c
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(7,15): warning C4477: "scanf": в строке форматирования "%d" требуется аргумент типа "int *", но вариативный аргумент "1" имеет тип "int **"
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(15,14): error C2082: переопределение формального параметра "col_amnt"
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(17,15): warning C4477: "scanf": в строке форматирования "%d" требуется аргумент типа "int *", но вариативный аргумент "1" имеет тип "int **"
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(36,31): warning C4047: <: "int" отличается по уровням косвенного обращения от "int *"
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(38,32): warning C4047: <: "int" отличается по уровням косвенного обращения от "int *"
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(41,36): error C2109: для индекса требуется массив или указатель
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(41,18): warning C4473: "scanf": передано недостаточно аргументов для строки формата
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(41,18): message : заполнители и их параметры ожидают переменное число аргументов в количестве 1, но было предоставлено 0
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(41,18): message : отсутствующий вариативный аргумент "1" требуется для строки форматирования "%d"
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(52,31): warning C4047: <: "int" отличается по уровням косвенного обращения от "int *"
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(54,32): warning C4047: <: "int" отличается по уровням косвенного обращения от "int *"
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(56,16): error C2109: для индекса требуется массив или указатель
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(64,18): error C2198: rows: слишком мало аргументов для вызова
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(64,38): error C2198: cols: слишком мало аргументов для вызова
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(68,49): error C2109: для индекса требуется массив или указатель
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(68,11): warning C4473: "printf": передано недостаточно аргументов для строки формата
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(68,11): message : заполнители и их параметры ожидают переменное число аргументов в количестве 3, но было предоставлено 2
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(68,11): message : отсутствующий вариативный аргумент "3" требуется для строки форматирования "%d"
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(64,6): error C2120: "void" недопустимо для всех типов
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(64,26): error C2120: "void" недопустимо для всех типов
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(74,2): error C2198: rows: слишком мало аргументов для вызова
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(75,2): error C2198: cols: слишком мало аргументов для вызова
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(76,2): error C2198: matrix_creating: слишком мало аргументов для вызова
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(77,22): warning C4047: функция: "int" отличается по уровням косвенного обращения от "int [100][100]"
-C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(77,16): warning C4024: matrix_output: различные типы для формального и фактического параметров 1
+C:\Users\tattomman\Desktop\OAiP\lab4\task1\task1.c(7,8): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
+  task1.vcxproj -> C:\Users\tattomman\Desktop\OAiP\lab4\x64\Debug\task1.exe
